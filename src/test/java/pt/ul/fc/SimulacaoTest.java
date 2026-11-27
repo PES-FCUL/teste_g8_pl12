@@ -33,4 +33,16 @@ class SimulacaoTest {
         assertTrue(bola.getY() >= Simulacao.RAIO, "y abaixo do limite: " + bola.getY());
         assertTrue(bola.getY() <= Simulacao.ALTURA - Simulacao.RAIO, "y acima do limite: " + bola.getY());
     }
+
+    @Test 
+    void boladescerPosicao(){
+        Simulacao simulacao = novaSimulacao();
+        for (int i = 0; i < 10; i++) {
+            simulacao.passo(0.05);
+        }
+        Bola bola = simulacao.getBola();
+        assertTrue(bola.getVy() < 0);
+
+    }
+
 }
