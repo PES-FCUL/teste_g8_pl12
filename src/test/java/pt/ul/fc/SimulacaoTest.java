@@ -2,6 +2,8 @@ package pt.ul.fc;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.beans.Transient;
+
 import org.junit.jupiter.api.Test;
 
 class SimulacaoTest {
@@ -32,5 +34,15 @@ class SimulacaoTest {
         assertTrue(bola.getX() <= Simulacao.LARGURA - Simulacao.RAIO, "x acima do limite: " + bola.getX());
         assertTrue(bola.getY() >= Simulacao.RAIO, "y abaixo do limite: " + bola.getY());
         assertTrue(bola.getY() <= Simulacao.ALTURA - Simulacao.RAIO, "y acima do limite: " + bola.getY());
+    }
+
+    @Test
+    void moveQuandoTocaNoChao() {
+        Simulacao simulacao = novaSimulacao();
+        for (int i = 0; i < 10; i++) {
+            simulacao.passo(0.05);
+        }
+        Bola bola = simulacao.getBola();
+        assertTrue(bola.getVy() > 0 || bola.getVy() < 0);
     }
 }
