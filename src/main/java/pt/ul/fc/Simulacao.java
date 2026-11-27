@@ -31,7 +31,7 @@ public class Simulacao {
      */
     public Simulacao(Bola bola) {
         this.bola = bola;
-    }
+    }   
 
     /**
      * Devolve a bola simulada.
@@ -47,7 +47,7 @@ public class Simulacao {
      * @param dt duração do passo, em segundos
      */
     public void passo(double dt) {
-        bola.acelerar(GRAVIDADE, 0.0);
+        bola.acelerar(GRAVIDADE, dt);
         bola.mover(dt);
         ressaltar();
     }

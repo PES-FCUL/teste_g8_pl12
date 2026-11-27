@@ -1,7 +1,7 @@
 package pt.ul.fc;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 class SimulacaoTest {
@@ -32,5 +32,14 @@ class SimulacaoTest {
         assertTrue(bola.getX() <= Simulacao.LARGURA - Simulacao.RAIO, "x acima do limite: " + bola.getX());
         assertTrue(bola.getY() >= Simulacao.RAIO, "y abaixo do limite: " + bola.getY());
         assertTrue(bola.getY() <= Simulacao.ALTURA - Simulacao.RAIO, "y acima do limite: " + bola.getY());
+    }
+
+    @Test
+    void bolaCai() {
+        Simulacao simulacao = novaSimulacao();
+        Bola bola = simulacao.getBola();
+        simulacao.passo(0.05);
+        Bola bola1 = simulacao.getBola();
+        assertTrue(bola.getY() < bola1.getY());
     }
 }
