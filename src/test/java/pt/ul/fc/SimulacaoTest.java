@@ -33,4 +33,21 @@ class SimulacaoTest {
         assertTrue(bola.getY() >= Simulacao.RAIO, "y abaixo do limite: " + bola.getY());
         assertTrue(bola.getY() <= Simulacao.ALTURA - Simulacao.RAIO, "y acima do limite: " + bola.getY());
     }
+
+    @Test
+    void deslocamentoNaDirecaoCorreta() {
+        Simulacao simulacao = novaSimulacao();
+        Bola bola = simulacao.getBola();
+        double xInicial = bola.getX();
+        double yInicial = bola.getY();
+        
+        for (int i = 0; i < 10; i++) {
+            simulacao.passo(0.05);
+        }
+
+        double xFinal = bola.getX();
+        double yFinal = bola.getY();
+        assertTrue(xFinal < xInicial, "A bola deveria estar numa coordenada x menor que a inicial");
+        assertTrue(yFinal < yInicial, "A bola deveria estar numa coordenada y menor que a inicial");
+    }
 }
