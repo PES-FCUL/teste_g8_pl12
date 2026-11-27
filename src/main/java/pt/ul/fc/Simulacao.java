@@ -22,7 +22,7 @@ public class Simulacao {
      * Coeficiente de restituição: fração da velocidade que a bola mantém
      * quando ressalta no chão (90% da velocidade).
      */
-    public static final double COEFICIENTE_RESTITUICAO = 0.0;
+    public static final double COEFICIENTE_RESTITUICAO = 0.9;
 
     private final Bola bola;
 
