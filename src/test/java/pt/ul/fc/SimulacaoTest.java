@@ -33,4 +33,18 @@ class SimulacaoTest {
         assertTrue(bola.getY() >= Simulacao.RAIO, "y abaixo do limite: " + bola.getY());
         assertTrue(bola.getY() <= Simulacao.ALTURA - Simulacao.RAIO, "y acima do limite: " + bola.getY());
     }
+    @Test 
+    void ballmoves() {
+        Simulacao simulacao = novaSimulacao();
+        Bola bola = simulacao.getBola();
+        double x0 = bola.getX();
+        double y0 = bola.getY();
+        double vx0 = bola.getVx();
+        double vy0 = bola.getVy();
+        double dt = 0.1;
+        simulacao.passo(dt);
+        assertTrue(bola.getX() != x0 || bola.getY() != y0, "A bola não se moveu");
+        assertEquals(x0 + vx0 * dt, bola.getX(), EPS);
+        assertEquals(y0 + vy0 * dt, bola.getY(), EPS);
+    }
 }
