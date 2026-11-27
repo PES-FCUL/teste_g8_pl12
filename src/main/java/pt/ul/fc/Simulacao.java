@@ -48,7 +48,7 @@ public class Simulacao {
      */
     public void passo(double dt) {
         bola.acelerar(GRAVIDADE, dt);
-        bola.mover(dt);
+        bola.mover(-dt);
         ressaltar();
     }
 
