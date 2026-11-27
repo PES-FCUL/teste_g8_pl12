@@ -17,7 +17,7 @@ public class Simulacao {
      * Fator de velocidade da simulação: 1.0 corresponde a tempo real
      * (2.0 seria o dobro da velocidade, 0.5 metade).
      */
-    public static final double VELOCIDADE_SIMULACAO = 0.0;
+    public static final double VELOCIDADE_SIMULACAO = 1.0;
 
     private final Bola bola;
 
