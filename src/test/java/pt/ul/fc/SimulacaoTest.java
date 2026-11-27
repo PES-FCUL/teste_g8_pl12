@@ -41,10 +41,11 @@ class SimulacaoTest {
         Bola bola = simulacao.getBola();
         for (int i = 0; i < 1000; i++){
             simulacao.passo(0.05);
-            if(bola.getY() == 0.250);
+            if(bola.getY() == 0.250){
                 simulacao.passo(0.05);
                 assertTrue(bola.getY() > 0.250);
                 break;
+            }
         }
     }
 }
