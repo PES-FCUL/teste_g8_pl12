@@ -15,7 +15,7 @@ public class Bola {
      */
     public Bola(double x, double y, double vx, double vy) {
         setPosicao(x, y);
-        setVelocidade(0.0, 0.0);
+        setVelocidade(-3.0, 1.0);
     }
 
     public double getX() {
