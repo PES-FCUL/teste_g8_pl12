@@ -12,6 +12,14 @@ class SimulacaoTest {
         return new Simulacao(new Bola(4.1, 2.2, -3.0, 1.0));
     }
 
+    @Test 
+    void velocidadeInicial() {
+        Simulacao simulacao = novaSimulacao();
+        Bola bola = simulacao.getBola();
+        assertEquals(-3.0, bola.getVx(), EPS);
+        assertEquals(1.0, bola.getVy(), EPS);
+    }
+
     @Test
     void posicaoInicial() {
         Simulacao simulacao = novaSimulacao();
