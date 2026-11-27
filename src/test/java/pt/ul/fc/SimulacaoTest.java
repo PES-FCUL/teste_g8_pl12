@@ -13,6 +13,15 @@ class SimulacaoTest {
     }
 
     @Test
+    void bolaMove() {
+        Simulacao simulacao = novaSimulacao();
+        Bola bola = simulacao.getBola();
+        simulacao.passo(0.05);
+        assertEquals(4.5 + 1.3 * 0.05, bola.getX(), EPS);
+        assertEquals(4.0 + 2.5 * 0.05, bola.getY(), EPS);
+    }
+
+    @Test
     void posicaoInicial() {
         Simulacao simulacao = novaSimulacao();
         Bola bola = simulacao.getBola();
